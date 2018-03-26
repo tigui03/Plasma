@@ -10,11 +10,19 @@ package plasma;
  * @author guillaumeb
  */
 import com.sun.javafx.application.PlatformImpl;
+import com.sun.javafx.css.converters.PaintConverter;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Paint;
+import java.awt.PaintContext;
+import java.awt.Rectangle;
+import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.ColorModel;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.JFXPanel;
@@ -82,8 +90,12 @@ public class SwingFXWebView extends JPanel {
             public void run() {             
    
                 VBox root = new VBox();  
-                Scene scene = new Scene(root,1174,800);  
-               
+                Scene scene;  
+                scene = new Scene(root,1174,800);
+                scene.setFill(Color.TRANSLUCENT);
+              
+                
+                
                 browser = new WebView();               
              
                 webEngine = browser.getEngine();
