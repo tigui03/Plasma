@@ -11,20 +11,19 @@ package plasma;
  */
 import com.sun.javafx.application.PlatformImpl;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.JFXPanel;
-import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
@@ -37,7 +36,6 @@ public class SwingFXWebView extends JPanel {
     private Stage stage;  
     private WebView browser;  
     private JFXPanel jfxPanel;  
-    private JButton swingButton;  
     private WebEngine webEngine;  
   
     public SwingFXWebView(){  
@@ -46,7 +44,7 @@ public class SwingFXWebView extends JPanel {
   
     public static void main(String ...args){  
         // Run this later:
-        SwingUtilities.invokeLater(new Runnable() {  
+        SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {  
                 final JFrame frame = new JFrame();  
@@ -64,27 +62,11 @@ public class SwingFXWebView extends JPanel {
          
         jfxPanel = new JFXPanel();  
         createScene();  
-         
+        
+        jfxPanel.setBackground(Color.darkGray);
         setLayout(new BorderLayout());  
         add(jfxPanel, BorderLayout.CENTER);  
          
-        swingButton = new JButton();  
-        swingButton.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                Platform.runLater(new Runnable() {
-
-                    @Override
-                    public void run() {
-                        webEngine.reload();
-                    }
-                });
-            }
-        });  
-        swingButton.setText("Reload");  
-         
-        add(swingButton, BorderLayout.SOUTH);  
     }     
      
     /** 
@@ -97,20 +79,15 @@ public class SwingFXWebView extends JPanel {
     private void createScene() {  
         PlatformImpl.startup(new Runnable() {  
             @Override
-            public void run() {  
-                 
-                stage = new Stage();  
-                 
-                stage.setTitle("Hello Java FX");  
-                stage.setResizable(true);  
+            public void run() {             
    
                 VBox root = new VBox();  
                 Scene scene = new Scene(root,1174,800);  
-                stage.setScene(scene);  
-                 
-                // Set up the embedded browser:
-                browser = new WebView();
+               
+                browser = new WebView();               
+             
                 webEngine = browser.getEngine();
+                
                 webEngine.load("http://192.168.0.60");
                 
                 ObservableList<Node> children = root.getChildren();
