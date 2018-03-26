@@ -38,14 +38,16 @@ public class Plasma extends Application {
         
         primaryStage.setTitle("Hello World!");
         primaryStage.setScene(scene);
-        primaryStage.show();
+        primaryStage.show();          
     }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        MainForm.main(args);
         launch(args);
+        
     }
     
 }
