@@ -92,7 +92,7 @@ public class SwingFXWebView extends JPanel {
                 VBox root = new VBox();  
                 Scene scene;  
                 scene = new Scene(root,1174,800);
-                scene.setFill(Color.TRANSLUCENT);
+                //scene.setFill(Color.TRANSLUCENT);
               
                 
                 
