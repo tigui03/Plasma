@@ -19,7 +19,7 @@ public class MainForm extends javax.swing.JFrame {
         initComponents();
                        
         mainPanel.setLayout(new BorderLayout());  
-        mainPanel.add(new SwingFXWebView(),BorderLayout.CENTER);
+        mainPanel.add(new graphWebView(),BorderLayout.CENTER);
         mainPanel.setVisible(true);
         
     }

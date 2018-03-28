@@ -25,16 +25,15 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
   
 /** 
- * SwingFXWebView 
+ * graphWebView 
  */  
-public class SwingFXWebView extends JPanel {  
+public class graphWebView extends JPanel {  
      
-    //public Stage stage;  
     private WebView browser;  
     private JFXPanel jfxPanel;  
     private WebEngine webEngine;  
   
-    public SwingFXWebView(){  
+    public graphWebView(){  
         initComponents();  
     }  
   
@@ -45,7 +44,7 @@ public class SwingFXWebView extends JPanel {
             public void run() {  
                 final JFrame frame = new JFrame();
                  
-                frame.getContentPane().add(new SwingFXWebView());  
+                frame.getContentPane().add(new graphWebView());  
                  
                 frame.setMinimumSize(new Dimension((400), 400));  
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
