@@ -20,11 +20,9 @@ import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
-import javafx.stage.Stage;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-import javafx.scene.paint.Color;
   
 /** 
  * SwingFXWebView 
@@ -56,9 +54,15 @@ public class SwingFXWebView extends JPanel {
         });     
     }  
      
-    private void initComponents(){               
-        createScene(); 
-        add(jfxPanel, new BorderLayout().CENTER);
+    private void initComponents(){  
+         
+        jfxPanel = new JFXPanel();  
+        createScene();  
+        
+        jfxPanel.setBackground(java.awt.Color.darkGray);
+        setLayout(new BorderLayout());  
+        add(jfxPanel, BorderLayout.CENTER);  
+         
     }     
      
     /** 
@@ -72,19 +76,22 @@ public class SwingFXWebView extends JPanel {
         PlatformImpl.startup(new Runnable() {  
             @Override
             public void run() {
+   
+                VBox root = new VBox();  
+                Scene scene;  
+                scene = new Scene(root,1174,800);
+                //scene.setFill(Color.TRANSLUCENT);
                 
-                
-                VBox root = new VBox();                
-                Scene scene = new Scene(root, 1215, 670, Color.BLUE);
-                                              
                 browser = new WebView();               
-                
+             
                 webEngine = browser.getEngine();
                 
                 webEngine.load("http://192.168.0.60");
                 
-                jfxPanel.setScene(scene);           
-                
+                ObservableList<Node> children = root.getChildren();
+                children.add(browser);                     
+                 
+                jfxPanel.setScene(scene);  
             }  
         });  
     }

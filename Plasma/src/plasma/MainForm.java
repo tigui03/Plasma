@@ -8,9 +8,8 @@ package plasma;
 import java.awt.BorderLayout;
 
 /**
- *
  * @author guillaumeb
- */
+ **/
 public class MainForm extends javax.swing.JFrame {
   
     /**
