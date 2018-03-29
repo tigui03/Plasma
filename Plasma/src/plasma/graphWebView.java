@@ -54,13 +54,18 @@ public class graphWebView extends JPanel {
     }  
      
     private void initComponents(){  
-         
-        jfxPanel = new JFXPanel();  
-        createScene();  
+        clock1 = new eu.hansolo.medusa.Clock();
         
+        clock1.setVisible(true);
+       
+        jfxPanel = new JFXPanel();
+        add(jfxPanel);
+        
+        /*jfxPanel = new JFXPanel();
+        createScene();
         jfxPanel.setBackground(java.awt.Color.darkGray);
         setLayout(new BorderLayout());  
-        add(jfxPanel, BorderLayout.CENTER);  
+        add(jfxPanel, BorderLayout.CENTER);  */
          
     }     
      
@@ -94,5 +99,7 @@ public class graphWebView extends JPanel {
             }  
         });  
     }
+    
+    private eu.hansolo.medusa.Clock clock1;
 
 }
