@@ -19,10 +19,10 @@ public class MainForm extends javax.swing.JFrame {
         initComponents();
                        
         mainPanel.setLayout(new BorderLayout());  
-        //mainPanel.add(new graphWebView(),BorderLayout.CENTER);
+        mainPanel.add(new graphWebView(),BorderLayout.CENTER);
        
-        clock1.setVisible(true);
-        clock1.applyCss();
+        //clock1.setVisible(true);
+        //clock1.applyCss();
         
         mainPanel.setVisible(true);
         
@@ -38,7 +38,6 @@ public class MainForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        clock1 = new eu.hansolo.medusa.Clock();
         mainPanel = new javax.swing.JPanel();
         leftPanel = new javax.swing.JPanel();
         bottomPanel = new javax.swing.JPanel();
@@ -171,7 +170,6 @@ public class MainForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bottomPanel;
-    private eu.hansolo.medusa.Clock clock1;
     private javax.swing.JPanel leftPanel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel topPanel;
