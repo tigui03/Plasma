@@ -54,10 +54,9 @@ public class BarGauge extends Application{
 
     
      @Override public void init() {
-         
-         
+                  
         value  = new SimpleDoubleProperty(0);
-        value.set(100.0);
+        value.set(70);
         //toggle = new SimpleBooleanProperty(false);
         
         gauge = GaugeBuilder.create()

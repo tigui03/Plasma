@@ -16,7 +16,8 @@ public class MainForm extends javax.swing.JFrame {
      * Creates new form MainForm
      */
     public MainForm() {
-        initComponents();
+        setUndecorated(true);
+        initComponents();        
                        
         mainPanel.setLayout(new BorderLayout());  
         mainPanel.add(new graphWebView(),BorderLayout.CENTER);
@@ -40,6 +41,7 @@ public class MainForm extends javax.swing.JFrame {
 
         mainPanel = new javax.swing.JPanel();
         leftPanel = new javax.swing.JPanel();
+        lbl_SidePanel1 = new javax.swing.JLabel();
         bottomPanel = new javax.swing.JPanel();
         topPanel = new javax.swing.JPanel();
 
@@ -48,57 +50,71 @@ public class MainForm extends javax.swing.JFrame {
         setBackground(new java.awt.Color(102, 102, 102));
         setForeground(new java.awt.Color(102, 102, 102));
 
-        mainPanel.setBackground(new java.awt.Color(102, 102, 102));
+        mainPanel.setBackground(new java.awt.Color(35, 38, 43));
+        mainPanel.setBorder(null);
         mainPanel.setEnabled(false);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1215, Short.MAX_VALUE)
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 672, Short.MAX_VALUE)
+            .addGap(0, 667, Short.MAX_VALUE)
         );
 
-        leftPanel.setBackground(new java.awt.Color(255, 51, 51));
+        leftPanel.setBackground(new java.awt.Color(36, 45, 60));
+        leftPanel.setBorder(null);
+
+        lbl_SidePanel1.setForeground(new java.awt.Color(254, 254, 254));
+        lbl_SidePanel1.setText("jLabel1");
+        lbl_SidePanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lbl_SidePanel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout leftPanelLayout = new javax.swing.GroupLayout(leftPanel);
         leftPanel.setLayout(leftPanelLayout);
         leftPanelLayout.setHorizontalGroup(
             leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 64, Short.MAX_VALUE)
+            .addComponent(lbl_SidePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
         );
         leftPanelLayout.setVerticalGroup(
             leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(leftPanelLayout.createSequentialGroup()
+                .addComponent(lbl_SidePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        bottomPanel.setBackground(new java.awt.Color(255, 255, 255));
+        bottomPanel.setBackground(new java.awt.Color(35, 38, 43));
+        bottomPanel.setBorder(null);
 
         javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
         bottomPanel.setLayout(bottomPanelLayout);
         bottomPanelLayout.setHorizontalGroup(
             bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1216, Short.MAX_VALUE)
+            .addGap(0, 1215, Short.MAX_VALUE)
         );
         bottomPanelLayout.setVerticalGroup(
             bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 92, Short.MAX_VALUE)
         );
 
-        topPanel.setBackground(new java.awt.Color(255, 255, 255));
+        topPanel.setBackground(new java.awt.Color(35, 38, 43));
+        topPanel.setBorder(null);
 
         javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
         topPanel.setLayout(topPanelLayout);
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 1215, Short.MAX_VALUE)
         );
         topPanelLayout.setVerticalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 36, Short.MAX_VALUE)
+            .addGap(0, 41, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -129,6 +145,17 @@ public class MainForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lbl_SidePanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbl_SidePanel1MouseClicked
+        
+        if (leftPanel.getWidth() == 200) {
+            leftPanel.setSize(65, this.getHeight());                   
+        }else{
+            leftPanel.setSize(200, this.getHeight());          
+        }
+            
+        
+    }//GEN-LAST:event_lbl_SidePanel1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -170,6 +197,7 @@ public class MainForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel bottomPanel;
+    private javax.swing.JLabel lbl_SidePanel1;
     private javax.swing.JPanel leftPanel;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JPanel topPanel;
