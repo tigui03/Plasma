@@ -16,12 +16,15 @@ public class MainForm extends javax.swing.JFrame {
      * Creates new form MainForm
      */
     public MainForm() {
+        
         setUndecorated(true);
-        initComponents();        
-                       
-        mainPanel.setLayout(new BorderLayout());  
-        mainPanel.add(new graphWebView(),BorderLayout.CENTER);
+        initComponents();
+        
+        
+        mainPanel.setLayout(new BorderLayout());
+        //mainPanel.add(new graphWebView(),BorderLayout.CENTER);
        
+        
         //clock1.setVisible(true);
         //clock1.applyCss();
         

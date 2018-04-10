@@ -16,6 +16,9 @@ import eu.hansolo.medusa.Test;
 import eu.hansolo.medusa.TickLabelLocation;
 import eu.hansolo.medusa.events.UpdateEvent;
 import java.time.Instant;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
@@ -51,21 +54,19 @@ public class BarGauge extends Application{
     private              BooleanProperty toggle;
     private              JFXPanel        jfxPanel;  
     //private static       int             noOfNodes = 0;
-
     
-     @Override public void init() {
-                  
-        value  = new SimpleDoubleProperty(0);
-        value.set(70);
-        //toggle = new SimpleBooleanProperty(false);
-        
+     @Override public void init() { 
+         
+        value  = new SimpleDoubleProperty(0);  
+        value.setValue(98.0);  
         gauge = GaugeBuilder.create()
                   .skinType(SkinType.MODERN)                                                        // Skin for your Gauge
                   .decimals(1)
-                  .build(); 
+                  .build();         
+ 
         gauge.valueProperty().bindBidirectional(value);
-
         gauge.getSections().forEach(section -> section.setOnSectionUpdate(sectionEvent -> gauge.fireUpdateEvent(new UpdateEvent(BarGauge.this, UpdateEvent.EventType.REDRAW))));
+     
      }
 
 
@@ -95,7 +96,7 @@ public class BarGauge extends Application{
         Scene scene = new Scene(pane);
         scene.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
 
-        primaryStage.setTitle("Medusae");
+        primaryStage.setTitle("Medusaaa");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
