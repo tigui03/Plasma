@@ -6,6 +6,7 @@
 package plasma;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 
 /**
  * @author guillaumeb
@@ -20,9 +21,9 @@ public class MainForm extends javax.swing.JFrame {
         setUndecorated(true);
         initComponents();
         
-        
+        mainPanel.setBackground(Color.getHSBColor(35,38,43));
         mainPanel.setLayout(new BorderLayout());
-        //mainPanel.add(new graphWebView(),BorderLayout.CENTER);
+        mainPanel.add(new graphWebView(),BorderLayout.CENTER);
        
         
         //clock1.setVisible(true);
