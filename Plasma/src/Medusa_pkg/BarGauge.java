@@ -71,7 +71,7 @@ public class BarGauge extends JPanel{
         value  = new SimpleDoubleProperty(100); 
         gauge = GaugeBuilder.create()
                   .skinType(SkinType.MODERN)                                                        // Skin for your Gauge
-                  .decimals(1)
+                  .decimals(0)
                   .build();         
  
         gauge.valueProperty().bindBidirectional(value);

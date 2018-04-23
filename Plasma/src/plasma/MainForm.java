@@ -56,26 +56,25 @@ public class MainForm extends javax.swing.JFrame {
         setBackground(new java.awt.Color(102, 102, 102));
         setForeground(new java.awt.Color(102, 102, 102));
 
-        mainPanel.setBackground(new java.awt.Color(35, 38, 43));
-        mainPanel.setBorder(null);
+        mainPanel.setBackground(new java.awt.Color(31, 33, 54));
         mainPanel.setEnabled(false);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1215, Short.MAX_VALUE)
+            .addGap(0, 1205, Short.MAX_VALUE)
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 667, Short.MAX_VALUE)
         );
 
-        leftPanel.setBackground(new java.awt.Color(36, 45, 60));
-        leftPanel.setBorder(null);
+        leftPanel.setBackground(new java.awt.Color(34, 38, 65));
 
         lbl_SidePanel1.setForeground(new java.awt.Color(254, 254, 254));
-        lbl_SidePanel1.setText("jLabel1");
+        lbl_SidePanel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_SidePanel1.setText("TEKNA APP");
         lbl_SidePanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lbl_SidePanel1MouseClicked(evt);
@@ -86,37 +85,35 @@ public class MainForm extends javax.swing.JFrame {
         leftPanel.setLayout(leftPanelLayout);
         leftPanelLayout.setHorizontalGroup(
             leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lbl_SidePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE)
+            .addComponent(lbl_SidePanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         leftPanelLayout.setVerticalGroup(
             leftPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leftPanelLayout.createSequentialGroup()
-                .addComponent(lbl_SidePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lbl_SidePanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        bottomPanel.setBackground(new java.awt.Color(35, 38, 43));
-        bottomPanel.setBorder(null);
+        bottomPanel.setBackground(new java.awt.Color(31, 33, 54));
 
         javax.swing.GroupLayout bottomPanelLayout = new javax.swing.GroupLayout(bottomPanel);
         bottomPanel.setLayout(bottomPanelLayout);
         bottomPanelLayout.setHorizontalGroup(
             bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1215, Short.MAX_VALUE)
+            .addGap(0, 1205, Short.MAX_VALUE)
         );
         bottomPanelLayout.setVerticalGroup(
             bottomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 92, Short.MAX_VALUE)
         );
 
-        topPanel.setBackground(new java.awt.Color(35, 38, 43));
-        topPanel.setBorder(null);
+        topPanel.setBackground(new java.awt.Color(31, 33, 54));
 
         javax.swing.GroupLayout topPanelLayout = new javax.swing.GroupLayout(topPanel);
         topPanel.setLayout(topPanelLayout);
         topPanelLayout.setHorizontalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1215, Short.MAX_VALUE)
+            .addGap(0, 1205, Short.MAX_VALUE)
         );
         topPanelLayout.setVerticalGroup(
             topPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
