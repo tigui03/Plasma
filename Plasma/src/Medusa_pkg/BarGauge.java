@@ -8,17 +8,22 @@ package Medusa_pkg;
 
 import com.sun.javafx.application.PlatformImpl;
 import eu.hansolo.medusa.Gauge;
+
 import eu.hansolo.medusa.Gauge.SkinType;
 import eu.hansolo.medusa.GaugeBuilder;
+import eu.hansolo.medusa.LcdFont;
+import eu.hansolo.medusa.Marker;
+import eu.hansolo.medusa.Section;
+import eu.hansolo.medusa.TickLabelLocation;
 import eu.hansolo.medusa.events.UpdateEvent;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.embed.swing.JFXPanel;
 import javafx.geometry.Insets;
 import javafx.geometry.NodeOrientation;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -55,11 +60,11 @@ public class BarGauge extends JPanel{
             @Override
             public void run() {  
                 final JFrame frame = new JFrame();
-                 
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
                 frame.getContentPane().add(new BarGauge());  
                  
-                frame.setMinimumSize(new Dimension((400), 400));  
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+                //frame.setMinimumSize(new Dimension((400), 400));  
+                
                 frame.setVisible(true);  
             }  
         });     
@@ -68,14 +73,54 @@ public class BarGauge extends JPanel{
     
     private void initComponents(){  
         
-        value  = new SimpleDoubleProperty(100); 
+        value  = new SimpleDoubleProperty(25); 
         gauge = GaugeBuilder.create()
-                  .skinType(SkinType.MODERN)                                                        // Skin for your Gauge
-                  .decimals(0)
-                  .build();         
+                            .skinType(SkinType.MODERN)
+                            //.prefSize(400, 400)
+                            .knobPosition(Pos.BOTTOM_LEFT)
+                            .tickLabelLocation(TickLabelLocation.OUTSIDE)
+                            .decimals(0)
+                            .minValue(-30)
+                            .maxValue(120)
+                            .startFromZero(true)
+                            .animated(true)
+                            //.checkThreshold(true)
+                            //.onThresholdExceeded(e -> System.out.println("threshold exceeded"))
+                            .lcdVisible(true)
+                            .lcdFont(LcdFont.LCD)
+                            //.locale(Locale.GERMANY)
+                            .title("Very Large Titlee")
+                            .unit("\u00B0C")
+                            .subTitle("Only")
+                            //.interactive(true)
+                            //.onButtonPressed(o -> System.out.println("Button pressed"))
+                            .sections(new Section(-30,  0, Color.rgb(  0,   0, 255), Color.rgb(  0,   0, 255)),
+                                      new Section(  0, 25, Color.rgb(255, 255,   0), Color.rgb(255, 255,   0)),
+                                      new Section( 75,100, Color.rgb(255,   0,   0), Color.rgb(255, 255,   0)))
+                            .sectionsVisible(false)
+                            .highlightSections(true)
+                            .autoScale(true)
+                            .averagingEnabled(true)
+                            .averagingPeriod(10)
+                            .averageVisible(true)
+                            .markers(
+                                new Marker( 0, "M1", Color.rgb(  0,   0, 255, 0.95), Marker.MarkerType.DOT),
+                                new Marker(25, "M2", Color.rgb(255, 255,   0, 0.95), Marker.MarkerType.STANDARD),
+                                new Marker(50, "M3", Color.rgb(255, 255,   0, 0.95), Marker.MarkerType.TRIANGLE)
+                            )
+                            .markersVisible(true)
+                            .ledVisible(true)
+                            //.ledType(LedType.FLAT)
+                            .thresholdVisible(true)
+                            .threshold(40)
+                            .checkThreshold(true)
+                            .onThresholdExceeded(e -> gauge.setLedBlinking(true))
+                            .onThresholdUnderrun(e -> gauge.setLedBlinking(false))
+                            .build();  
  
-        gauge.valueProperty().bindBidirectional(value);
-        gauge.getSections().forEach(section -> section.setOnSectionUpdate(sectionEvent -> gauge.fireUpdateEvent(new UpdateEvent(BarGauge.this, UpdateEvent.EventType.REDRAW))));
+       gauge.valueProperty().bindBidirectional(value);
+
+       gauge.getSections().forEach(section -> section.setOnSectionUpdate(sectionEvent -> gauge.fireUpdateEvent(new UpdateEvent(BarGauge.this, UpdateEvent.EventType.REDRAW))));
         
               
         jfxPanel = new JFXPanel();

@@ -189,7 +189,7 @@ public class Test extends Application {
     }
 
     @Override public void start(Stage stage) {
-        StackPane pane = new StackPane(gauge);
+        StackPane pane = new StackPane(clock);
         pane.setPadding(new Insets(20));
         pane.setNodeOrientation(NodeOrientation.RIGHT_TO_LEFT);
         LinearGradient gradient = new LinearGradient(0, 0, 0, pane.getLayoutBounds().getHeight(),

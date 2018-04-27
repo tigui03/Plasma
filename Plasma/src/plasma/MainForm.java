@@ -7,8 +7,9 @@ package plasma;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import javafx.application.Application;
 import Medusa_pkg.BarGauge;
-
+import Medusa_pkg.FGaugeDemo;
 /**
  * @author guillaumeb
  **/
@@ -24,8 +25,8 @@ public class MainForm extends javax.swing.JFrame {
         
         mainPanel.setBackground(Color.getHSBColor(35,38,43));
         mainPanel.setLayout(new BorderLayout());
-        //mainPanel.add(new BarGauge(),BorderLayout.EAST);
-         mainPanel.add(new graphWebView(),BorderLayout.CENTER);
+        mainPanel.add(new graphWebView(),BorderLayout.CENTER);
+        // mainPanel.add(new FGaugeDemo(),BorderLayout.CENTER);
        
         
         //clock1.setVisible(true);

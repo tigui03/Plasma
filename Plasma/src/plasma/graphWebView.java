@@ -70,21 +70,18 @@ public class graphWebView extends JPanel {
     private void createScene() {  
         PlatformImpl.startup(new Runnable() {  
             @Override
-            public void run() {
-                
+            public void run() {               
                
    
                 StackPane root = new StackPane(); 
                 Scene scene;  
                 scene = new Scene(root);
-                
-                //scene.setFill(Color.DARKGRAY);
-                
+                             
                 browser = new WebView();               
                 
                 webEngine = browser.getEngine();
                 
-                webEngine.load("http://192.168.0.60");
+                webEngine.load("http://192.168.0.60/index.htm");
                 
                  root.getChildren().add(browser);
                 
