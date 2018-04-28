@@ -18,7 +18,7 @@ public class MainForm extends javax.swing.JFrame {
      */
     public MainForm() {
         
-        setUndecorated(true);
+        //setUndecorated(true);
         initComponents();
         
         mainPanel.setBackground(Color.getHSBColor(35,38,43));
