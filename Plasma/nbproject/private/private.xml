@@ -3,9 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/D:/Plasma%20Project/Plasma/Plasma/src/plasma/MainForm.java</file>
             <file>file:/D:/Plasma%20Project/Plasma/Plasma/src/plasma/Plasma.java</file>
             <file>file:/D:/Plasma%20Project/Plasma/Plasma/nbproject/jfx-impl.xml</file>
+=======
+            <file>file:/home/guillaume/Plasma/Plasma/src/Medusa_pkg/FGaugeDemo.java</file>
+            <file>file:/home/guillaume/Plasma/Plasma/src/Medusa_pkg/BarGauge.java</file>
+            <file>file:/home/guillaume/Plasma/Plasma/src/plasma/graphWebView.java</file>
+            <file>file:/home/guillaume/Plasma/Plasma/src/plasma/MainForm.java</file>
+            <file>file:/home/guillaume/Plasma/Plasma/src/plasma/Plasma.java</file>
+>>>>>>> 5901f7df2614f1f4bb35211152e8452a9fe239e2
         </group>
     </open-files>
 </project-private>

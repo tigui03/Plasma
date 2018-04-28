@@ -63,7 +63,11 @@
     <Container class="javax.swing.JPanel" name="mainPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+<<<<<<< HEAD
           <Color blue="2b" green="26" red="23" type="rgb"/>
+=======
+          <Color blue="36" green="21" red="1f" type="rgb"/>
+>>>>>>> 5901f7df2614f1f4bb35211152e8452a9fe239e2
         </Property>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
@@ -71,7 +75,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="1215" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="1205" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -84,20 +88,24 @@
     <Container class="javax.swing.JPanel" name="leftPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+<<<<<<< HEAD
           <Color blue="3c" green="2d" red="24" type="rgb"/>
+=======
+          <Color blue="41" green="26" red="22" type="rgb"/>
+>>>>>>> 5901f7df2614f1f4bb35211152e8452a9fe239e2
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="lbl_SidePanel1" alignment="0" pref="65" max="32767" attributes="0"/>
+              <Component id="lbl_SidePanel1" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="lbl_SidePanel1" min="-2" pref="39" max="-2" attributes="0"/>
+                  <Component id="lbl_SidePanel1" min="-2" pref="71" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -109,7 +117,8 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="fe" green="fe" red="fe" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="TEKNA APP"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lbl_SidePanel1MouseClicked"/>
@@ -120,14 +129,18 @@
     <Container class="javax.swing.JPanel" name="bottomPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+<<<<<<< HEAD
           <Color blue="2b" green="26" red="23" type="rgb"/>
+=======
+          <Color blue="36" green="21" red="1f" type="rgb"/>
+>>>>>>> 5901f7df2614f1f4bb35211152e8452a9fe239e2
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="1215" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="1205" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -140,14 +153,18 @@
     <Container class="javax.swing.JPanel" name="topPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+<<<<<<< HEAD
           <Color blue="2b" green="26" red="23" type="rgb"/>
+=======
+          <Color blue="36" green="21" red="1f" type="rgb"/>
+>>>>>>> 5901f7df2614f1f4bb35211152e8452a9fe239e2
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="1215" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="1205" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">

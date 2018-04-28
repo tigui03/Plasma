@@ -11,13 +11,10 @@ package plasma;
  */
 import com.sun.javafx.application.PlatformImpl;
 import java.awt.BorderLayout;
-//import java.awt.Color;
 import java.awt.Dimension;
-import javafx.collections.ObservableList;
 import javafx.embed.swing.JFXPanel;
-import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javax.swing.JFrame;
@@ -73,27 +70,27 @@ public class graphWebView extends JPanel {
     private void createScene() {  
         PlatformImpl.startup(new Runnable() {  
             @Override
-            public void run() {
+            public void run() {               
+               
    
-                VBox root = new VBox();  
+                StackPane root = new StackPane(); 
                 Scene scene;  
-                scene = new Scene(root,1174,800);
-                //scene.setFill(Color.TRANSLUCENT);
-                
+                scene = new Scene(root);
+                             
                 browser = new WebView();               
-             
+                
                 webEngine = browser.getEngine();
                 
-                webEngine.load("http://192.168.0.60");
+                webEngine.load("http://192.168.0.60/index.htm");
                 
-                ObservableList<Node> children = root.getChildren();
-                children.add(browser);                     
+                 root.getChildren().add(browser);
+                
                  
                 jfxPanel.setScene(scene);  
+              
             }  
         });  
     }
     
-    private eu.hansolo.medusa.Clock clock1;
 
 }
