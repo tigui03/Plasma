@@ -53,7 +53,7 @@ import java.util.Random;
 /**
  * Created by hansolo on 12.01.16.
  */
-public class FGaugeDemo extends Application {
+public class BarGauge extends Application {
     private static final Random RND = new Random();
     private              Gauge  gauge;
     private              FGauge fGauge;
@@ -119,7 +119,7 @@ public class FGaugeDemo extends Application {
          *  Simply play with the boolean variables first to see what mean.
          */
         gauge = GaugeBuilder.create()
-                            .skinType(Gauge.SkinType.MODERN)
+                            .skinType(Gauge.SkinType.BAR)
                             .prefSize(500,500)                                                                  // Set the preferred size of the control
                             // Related to Foreground Elements
                             .foregroundBaseColor(Color.WHITE)                                                   // Defines a color for title, subtitle, unit, value, tick label, tick mark, major tick mark, medium tick mark and minor tick mark
