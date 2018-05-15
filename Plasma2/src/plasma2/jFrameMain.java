@@ -5,17 +5,25 @@
  */
 package plasma2;
 
+import java.awt.BorderLayout;
+import javax.swing.JTextField;
+
 /**
  *
  * @author guillaume
  */
 public class jFrameMain extends javax.swing.JFrame {
-
+      //BarGaugePanel barGaugePanel = new BarGaugePanel();
     /**
      * Creates new form jFrameMain
      */
     public jFrameMain() {
         initComponents();
+        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        
+        jPanel1.setLayout(new BorderLayout());        
+        jPanel1.add(new DashBoardPanel(),BorderLayout.CENTER);
+        
     }
 
     /**
@@ -27,21 +35,302 @@ public class jFrameMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel_Left = new javax.swing.JPanel();
+        jPanel_Left2 = new javax.swing.JPanel();
+        jLabel_dashBoard = new javax.swing.JLabel();
+        jLabel_StartPlasma = new javax.swing.JLabel();
+        jLabel_graph = new javax.swing.JLabel();
+        jLabel_Hamberg = new javax.swing.JLabel();
+        jPanel_Top = new javax.swing.JPanel();
+        jLbl_LOGO = new javax.swing.JLabel();
+        jTop_IconUser = new javax.swing.JLabel();
+        jTop_IconAlarm = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Plasma");
+        setBackground(new java.awt.Color(255, 153, 153));
+        setPreferredSize(new java.awt.Dimension(1280, 800));
+
+        jPanel_Left.setBackground(new java.awt.Color(26, 29, 36));
+
+        jPanel_Left2.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel_Left2.setOpaque(false);
+
+        jLabel_dashBoard.setBackground(new java.awt.Color(26, 29, 36));
+        jLabel_dashBoard.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel_dashBoard.setIcon(new javax.swing.ImageIcon("/home/guillaume/Plasma/Plasma2/images/DashBoard2.png")); // NOI18N
+        jLabel_dashBoard.setText("Dash Board");
+        jLabel_dashBoard.setOpaque(true);
+        jLabel_dashBoard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_dashBoardMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel_dashBoardMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel_dashBoardMouseEntered(evt);
+            }
+        });
+
+        jLabel_StartPlasma.setBackground(new java.awt.Color(26, 29, 36));
+        jLabel_StartPlasma.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel_StartPlasma.setIcon(new javax.swing.ImageIcon("/home/guillaume/Plasma/Plasma2/images/StartPlasma.png")); // NOI18N
+        jLabel_StartPlasma.setText("Start Plasma");
+        jLabel_StartPlasma.setOpaque(true);
+        jLabel_StartPlasma.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_StartPlasmaMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel_StartPlasmaMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel_StartPlasmaMouseEntered(evt);
+            }
+        });
+
+        jLabel_graph.setBackground(new java.awt.Color(26, 29, 36));
+        jLabel_graph.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel_graph.setIcon(new javax.swing.ImageIcon("/home/guillaume/Plasma/Plasma2/images/graph.png")); // NOI18N
+        jLabel_graph.setText("Graph");
+        jLabel_graph.setOpaque(true);
+        jLabel_graph.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_graphMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel_graphMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel_graphMouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_Left2Layout = new javax.swing.GroupLayout(jPanel_Left2);
+        jPanel_Left2.setLayout(jPanel_Left2Layout);
+        jPanel_Left2Layout.setHorizontalGroup(
+            jPanel_Left2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel_graph, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel_StartPlasma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel_dashBoard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel_Left2Layout.setVerticalGroup(
+            jPanel_Left2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_Left2Layout.createSequentialGroup()
+                .addComponent(jLabel_dashBoard, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel_StartPlasma, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jLabel_graph, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 76, Short.MAX_VALUE))
+        );
+
+        jLabel_dashBoard.getAccessibleContext().setAccessibleName("");
+
+        jLabel_Hamberg.setBackground(new java.awt.Color(26, 29, 36));
+        jLabel_Hamberg.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel_Hamberg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel_Hamberg.setIcon(new javax.swing.ImageIcon("/home/guillaume/Plasma/Plasma2/images/hamberg.png")); // NOI18N
+        jLabel_Hamberg.setOpaque(true);
+        jLabel_Hamberg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_HambergMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel_HambergMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel_HambergMouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_LeftLayout = new javax.swing.GroupLayout(jPanel_Left);
+        jPanel_Left.setLayout(jPanel_LeftLayout);
+        jPanel_LeftLayout.setHorizontalGroup(
+            jPanel_LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel_Left2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel_Hamberg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel_LeftLayout.setVerticalGroup(
+            jPanel_LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_LeftLayout.createSequentialGroup()
+                .addComponent(jLabel_Hamberg, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(94, 94, 94)
+                .addComponent(jPanel_Left2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(305, Short.MAX_VALUE))
+        );
+
+        jPanel_Top.setBackground(new java.awt.Color(26, 29, 36));
+        jPanel_Top.setPreferredSize(new java.awt.Dimension(473, 65));
+
+        jLbl_LOGO.setIcon(new javax.swing.ImageIcon("/home/guillaume/Plasma/Plasma2/images/TEKNA-NR.PNG")); // NOI18N
+        jLbl_LOGO.setText("jLabel1");
+
+        jTop_IconUser.setBackground(new java.awt.Color(26, 29, 36));
+        jTop_IconUser.setForeground(new java.awt.Color(250, 250, 250));
+        jTop_IconUser.setIcon(new javax.swing.ImageIcon("/home/guillaume/Plasma/Plasma2/images/User.png")); // NOI18N
+        jTop_IconUser.setText("TEKNA's TEAM");
+        jTop_IconUser.setToolTipText("");
+        jTop_IconUser.setOpaque(true);
+        jTop_IconUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jTop_IconUserMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTop_IconUserMouseEntered(evt);
+            }
+        });
+
+        jTop_IconAlarm.setBackground(new java.awt.Color(26, 29, 36));
+        jTop_IconAlarm.setForeground(new java.awt.Color(250, 250, 250));
+        jTop_IconAlarm.setIcon(new javax.swing.ImageIcon("/home/guillaume/Plasma/Plasma2/images/alarm.png")); // NOI18N
+        jTop_IconAlarm.setToolTipText("");
+        jTop_IconAlarm.setOpaque(true);
+        jTop_IconAlarm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jTop_IconAlarmMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jTop_IconAlarmMouseEntered(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel_TopLayout = new javax.swing.GroupLayout(jPanel_Top);
+        jPanel_Top.setLayout(jPanel_TopLayout);
+        jPanel_TopLayout.setHorizontalGroup(
+            jPanel_TopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel_TopLayout.createSequentialGroup()
+                .addComponent(jLbl_LOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTop_IconAlarm, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jTop_IconUser, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel_TopLayout.setVerticalGroup(
+            jPanel_TopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_TopLayout.createSequentialGroup()
+                .addGroup(jPanel_TopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLbl_LOGO, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel_TopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jTop_IconUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTop_IconAlarm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(602, 602, 602))
+        );
+
+        jPanel1.setBackground(new java.awt.Color(35, 38, 43));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1215, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 735, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel_Left, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel_Top, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel_Top, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addComponent(jPanel_Left, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel_dashBoardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_dashBoardMouseExited
+        jLabel_dashBoard.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_jLabel_dashBoardMouseExited
+
+    private void jLabel_dashBoardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_dashBoardMouseEntered
+        jLabel_dashBoard.setBackground(new java.awt.Color(100, 100, 100));
+
+    }//GEN-LAST:event_jLabel_dashBoardMouseEntered
+
+    private void jTop_IconAlarmMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTop_IconAlarmMouseEntered
+        jTop_IconAlarm.setBackground(new java.awt.Color(100, 100, 100));
+    }//GEN-LAST:event_jTop_IconAlarmMouseEntered
+
+    private void jTop_IconUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTop_IconUserMouseExited
+       jTop_IconUser.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_jTop_IconUserMouseExited
+
+    private void jTop_IconAlarmMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTop_IconAlarmMouseExited
+       jTop_IconAlarm.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_jTop_IconAlarmMouseExited
+
+    private void jTop_IconUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTop_IconUserMouseEntered
+        jTop_IconUser.setBackground(new java.awt.Color(100, 100, 100));
+    }//GEN-LAST:event_jTop_IconUserMouseEntered
+
+    private void jLabel_StartPlasmaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_StartPlasmaMouseExited
+        jLabel_StartPlasma.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_jLabel_StartPlasmaMouseExited
+
+    private void jLabel_StartPlasmaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_StartPlasmaMouseEntered
+        jLabel_StartPlasma.setBackground(new java.awt.Color(100, 100, 100));
+    }//GEN-LAST:event_jLabel_StartPlasmaMouseEntered
+
+    private void jLabel_graphMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_graphMouseExited
+        jLabel_graph.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_jLabel_graphMouseExited
+
+    private void jLabel_graphMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_graphMouseEntered
+        jLabel_graph.setBackground(new java.awt.Color(100, 100, 100));    }//GEN-LAST:event_jLabel_graphMouseEntered
+
+    private void jLabel_HambergMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_HambergMouseClicked
+        if (jPanel_Left.getWidth() == 160){
+           jPanel_Left.setSize(65,jPanel_Left.getHeight());
+           jLabel_Hamberg.setHorizontalAlignment(JTextField.LEFT);
+       }
+       else{
+           jPanel_Left.setSize(160,jPanel_Left.getHeight());
+           jLabel_Hamberg.setHorizontalAlignment(JTextField.RIGHT);
+       }
+    }//GEN-LAST:event_jLabel_HambergMouseClicked
+
+    private void jLabel_HambergMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_HambergMouseExited
+       jLabel_Hamberg.setBackground(new java.awt.Color(51, 51, 51));
+    }//GEN-LAST:event_jLabel_HambergMouseExited
+
+    private void jLabel_HambergMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_HambergMouseEntered
+        jLabel_Hamberg.setBackground(new java.awt.Color(100, 100, 100));
+    }//GEN-LAST:event_jLabel_HambergMouseEntered
+
+    private void jLabel_dashBoardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_dashBoardMouseClicked
+        jPanel_Left.setSize(65,jPanel_Left.getHeight());
+        jLabel_Hamberg.setHorizontalAlignment(JTextField.LEFT);
+    }//GEN-LAST:event_jLabel_dashBoardMouseClicked
+
+    private void jLabel_StartPlasmaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_StartPlasmaMouseClicked
+        jPanel_Left.setSize(65,jPanel_Left.getHeight());
+        jLabel_Hamberg.setHorizontalAlignment(JTextField.LEFT);
+    }//GEN-LAST:event_jLabel_StartPlasmaMouseClicked
+
+    private void jLabel_graphMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_graphMouseClicked
+        jPanel_Left.setSize(65,jPanel_Left.getHeight());
+        jLabel_Hamberg.setHorizontalAlignment(JTextField.LEFT);
+    }//GEN-LAST:event_jLabel_graphMouseClicked
 
     /**
      * @param args the command line arguments
@@ -71,13 +360,22 @@ public class jFrameMain extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new jFrameMain().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new jFrameMain().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel_Hamberg;
+    private javax.swing.JLabel jLabel_StartPlasma;
+    private javax.swing.JLabel jLabel_dashBoard;
+    private javax.swing.JLabel jLabel_graph;
+    private javax.swing.JLabel jLbl_LOGO;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel_Left;
+    private javax.swing.JPanel jPanel_Left2;
+    private javax.swing.JPanel jPanel_Top;
+    private javax.swing.JLabel jTop_IconAlarm;
+    private javax.swing.JLabel jTop_IconUser;
     // End of variables declaration//GEN-END:variables
 }

@@ -16,7 +16,7 @@ public class Plasma2 extends Application {
     
     @Override
     public void start(Stage primaryStage) {
-        
+        new jFrameMain().setVisible(true);
     }
 
     /**

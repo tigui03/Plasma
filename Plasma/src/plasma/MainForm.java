@@ -7,9 +7,6 @@ package plasma;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import javafx.application.Application;
-import Medusa_pkg.BarGauge;
-import Medusa_pkg.FGaugeDemo;
 /**
  * @author guillaumeb
  **/
