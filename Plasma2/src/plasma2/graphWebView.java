@@ -79,9 +79,9 @@ public class graphWebView extends JPanel  {
                 
                 webEngine.load("http://192.168.0.60/index.htm");
                 
-                 root.getChildren().add(browser);
+                root.getChildren().add(browser);
                 
-                 
+                
                 jfxPanel.setScene(scene); 
                 
                 

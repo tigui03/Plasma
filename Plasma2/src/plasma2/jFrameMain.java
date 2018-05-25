@@ -6,6 +6,7 @@
 package plasma2;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import javax.swing.JTextField;
 
 /**
@@ -13,17 +14,26 @@ import javax.swing.JTextField;
  * @author guillaume
  */
 public class jFrameMain extends javax.swing.JFrame {
+    
+   DashBoardPanel DashBoard = new DashBoardPanel();  
+   SQL_Panel SQL = new SQL_Panel();
       //BarGaugePanel barGaugePanel = new BarGaugePanel();
     /**
      * Creates new form jFrameMain
      */
     public jFrameMain() {
         initComponents();
-        setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
+        jLayeredPane1.moveToFront(jPanel_Left);
+        jLayeredPane1.moveToBack(jPanel1);
+        
+        
+        
+        //setExtendedState(java.awt.Frame.MAXIMIZED_BOTH);
         
         jPanel1.setLayout(new BorderLayout());        
-        jPanel1.add(new DashBoardPanel(),BorderLayout.CENTER);
-        
+        jPanel1.add(DashBoard,BorderLayout.CENTER);
+        DashBoard.setVisible(true);
+       
     }
 
     /**
@@ -35,11 +45,13 @@ public class jFrameMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         jPanel_Left = new javax.swing.JPanel();
         jPanel_Left2 = new javax.swing.JPanel();
         jLabel_dashBoard = new javax.swing.JLabel();
         jLabel_StartPlasma = new javax.swing.JLabel();
         jLabel_graph = new javax.swing.JLabel();
+        jLabel_Data = new javax.swing.JLabel();
         jLabel_Hamberg = new javax.swing.JLabel();
         jPanel_Top = new javax.swing.JPanel();
         jLbl_LOGO = new javax.swing.JLabel();
@@ -50,7 +62,6 @@ public class jFrameMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Plasma");
         setBackground(new java.awt.Color(255, 153, 153));
-        setPreferredSize(new java.awt.Dimension(1280, 800));
 
         jPanel_Left.setBackground(new java.awt.Color(26, 29, 36));
 
@@ -108,6 +119,23 @@ public class jFrameMain extends javax.swing.JFrame {
             }
         });
 
+        jLabel_Data.setBackground(new java.awt.Color(26, 29, 36));
+        jLabel_Data.setForeground(new java.awt.Color(250, 250, 250));
+        jLabel_Data.setIcon(new javax.swing.ImageIcon("/home/guillaume/Plasma/Plasma2/images/data.png")); // NOI18N
+        jLabel_Data.setText("Graph");
+        jLabel_Data.setOpaque(true);
+        jLabel_Data.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel_DataMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel_DataMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel_DataMouseEntered(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_Left2Layout = new javax.swing.GroupLayout(jPanel_Left2);
         jPanel_Left2.setLayout(jPanel_Left2Layout);
         jPanel_Left2Layout.setHorizontalGroup(
@@ -115,6 +143,7 @@ public class jFrameMain extends javax.swing.JFrame {
             .addComponent(jLabel_graph, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel_StartPlasma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel_dashBoard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel_Data, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel_Left2Layout.setVerticalGroup(
             jPanel_Left2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +153,9 @@ public class jFrameMain extends javax.swing.JFrame {
                 .addComponent(jLabel_StartPlasma, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jLabel_graph, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 76, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(jLabel_Data, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         jLabel_dashBoard.getAccessibleContext().setAccessibleName("");
@@ -157,9 +188,9 @@ public class jFrameMain extends javax.swing.JFrame {
             jPanel_LeftLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel_LeftLayout.createSequentialGroup()
                 .addComponent(jLabel_Hamberg, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94)
+                .addGap(100, 100, 100)
                 .addComponent(jPanel_Left2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(305, Short.MAX_VALUE))
+                .addContainerGap(290, Short.MAX_VALUE))
         );
 
         jPanel_Top.setBackground(new java.awt.Color(26, 29, 36));
@@ -225,41 +256,52 @@ public class jFrameMain extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1215, Short.MAX_VALUE)
+            .addGap(0, 1248, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 735, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(layout.createSequentialGroup()
+        jLayeredPane1.setLayer(jPanel_Left, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jPanel_Top, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jPanel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                 .addComponent(jPanel_Left, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel_Top, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
+            .addComponent(jPanel_Top, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1313, Short.MAX_VALUE)
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addComponent(jPanel_Top, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel_Left, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLayeredPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel_Top, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(jPanel_Left, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addComponent(jLayeredPane1)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel_dashBoardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_dashBoardMouseExited
-        jLabel_dashBoard.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel_dashBoard.setBackground(jPanel_Left.getBackground());
     }//GEN-LAST:event_jLabel_dashBoardMouseExited
 
     private void jLabel_dashBoardMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_dashBoardMouseEntered
@@ -272,11 +314,11 @@ public class jFrameMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jTop_IconAlarmMouseEntered
 
     private void jTop_IconUserMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTop_IconUserMouseExited
-       jTop_IconUser.setBackground(new java.awt.Color(51, 51, 51));
+       jTop_IconUser.setBackground(jPanel_Left.getBackground());
     }//GEN-LAST:event_jTop_IconUserMouseExited
 
     private void jTop_IconAlarmMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTop_IconAlarmMouseExited
-       jTop_IconAlarm.setBackground(new java.awt.Color(51, 51, 51));
+       jTop_IconAlarm.setBackground(jPanel_Left.getBackground());
     }//GEN-LAST:event_jTop_IconAlarmMouseExited
 
     private void jTop_IconUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTop_IconUserMouseEntered
@@ -284,7 +326,7 @@ public class jFrameMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jTop_IconUserMouseEntered
 
     private void jLabel_StartPlasmaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_StartPlasmaMouseExited
-        jLabel_StartPlasma.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel_StartPlasma.setBackground(jPanel_Left.getBackground());
     }//GEN-LAST:event_jLabel_StartPlasmaMouseExited
 
     private void jLabel_StartPlasmaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_StartPlasmaMouseEntered
@@ -292,7 +334,7 @@ public class jFrameMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel_StartPlasmaMouseEntered
 
     private void jLabel_graphMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_graphMouseExited
-        jLabel_graph.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel_graph.setBackground(jPanel_Left.getBackground());
     }//GEN-LAST:event_jLabel_graphMouseExited
 
     private void jLabel_graphMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_graphMouseEntered
@@ -310,7 +352,7 @@ public class jFrameMain extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel_HambergMouseClicked
 
     private void jLabel_HambergMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_HambergMouseExited
-       jLabel_Hamberg.setBackground(new java.awt.Color(51, 51, 51));
+       jLabel_Hamberg.setBackground(jPanel_Left.getBackground());
     }//GEN-LAST:event_jLabel_HambergMouseExited
 
     private void jLabel_HambergMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_HambergMouseEntered
@@ -320,6 +362,17 @@ public class jFrameMain extends javax.swing.JFrame {
     private void jLabel_dashBoardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_dashBoardMouseClicked
         jPanel_Left.setSize(65,jPanel_Left.getHeight());
         jLabel_Hamberg.setHorizontalAlignment(JTextField.LEFT);
+                
+        for (Component c : this.getComponents()) {
+            
+               (c).setVisible(true);
+            }        
+        jPanel1.removeAll();
+        jPanel1.add(DashBoard,BorderLayout.CENTER);
+        DashBoard.setVisible(true);
+        
+            
+        
     }//GEN-LAST:event_jLabel_dashBoardMouseClicked
 
     private void jLabel_StartPlasmaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_StartPlasmaMouseClicked
@@ -331,6 +384,29 @@ public class jFrameMain extends javax.swing.JFrame {
         jPanel_Left.setSize(65,jPanel_Left.getHeight());
         jLabel_Hamberg.setHorizontalAlignment(JTextField.LEFT);
     }//GEN-LAST:event_jLabel_graphMouseClicked
+
+    private void jLabel_DataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_DataMouseClicked
+        jPanel_Left.setSize(65,jPanel_Left.getHeight());
+        jLabel_Hamberg.setHorizontalAlignment(JTextField.LEFT);
+                
+        for (Component c : this.getComponents()) {
+            
+               (c).setVisible(true);
+            }        
+        jPanel1.removeAll();
+        jPanel1.add(SQL,BorderLayout.CENTER);
+        DashBoard.setVisible(true);
+       
+        
+    }//GEN-LAST:event_jLabel_DataMouseClicked
+
+    private void jLabel_DataMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_DataMouseExited
+       jLabel_Data.setBackground(jPanel_Left.getBackground());
+    }//GEN-LAST:event_jLabel_DataMouseExited
+
+    private void jLabel_DataMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_DataMouseEntered
+       jLabel_Data.setBackground(new java.awt.Color(100, 100, 100));
+    }//GEN-LAST:event_jLabel_DataMouseEntered
 
     /**
      * @param args the command line arguments
@@ -366,10 +442,12 @@ public class jFrameMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel_Data;
     private javax.swing.JLabel jLabel_Hamberg;
     private javax.swing.JLabel jLabel_StartPlasma;
     private javax.swing.JLabel jLabel_dashBoard;
     private javax.swing.JLabel jLabel_graph;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JLabel jLbl_LOGO;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel_Left;

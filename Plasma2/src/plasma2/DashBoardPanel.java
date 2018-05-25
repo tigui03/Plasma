@@ -49,12 +49,12 @@ public class DashBoardPanel extends javax.swing.JPanel {
         
         // set tous les Jpanel en borderLayout
         for (Component c : this.getComponents()) {
-            if (c instanceof javax.swing.JPanel) { 
+            if (c instanceof javax.swing.JPanel) {
                ((javax.swing.JPanel)c).setLayout(new BorderLayout());
             }
         }
-        
-        // ajout des composents "dashboard" 
+        // ajout des composents "dashboard"
+       
         jPanel_Graph.add(Graph1);
         jPanel_gauge1.add(barGauge9);
 
@@ -105,6 +105,7 @@ public class DashBoardPanel extends javax.swing.JPanel {
         );
 
         jPanel_Graph.setBackground(new java.awt.Color(200, 200, 200));
+        jPanel_Graph.setToolTipText("");
         jPanel_Graph.setPreferredSize(new java.awt.Dimension(700, 300));
 
         javax.swing.GroupLayout jPanel_GraphLayout = new javax.swing.GroupLayout(jPanel_Graph);
@@ -210,23 +211,23 @@ public class DashBoardPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPAnel_TaskInProgress, javax.swing.GroupLayout.DEFAULT_SIZE, 1197, Short.MAX_VALUE))
+                        .addComponent(jPAnel_TaskInProgress, javax.swing.GroupLayout.DEFAULT_SIZE, 1188, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(13, 13, 13)
-                        .addComponent(jPanel_Graph, javax.swing.GroupLayout.DEFAULT_SIZE, 710, Short.MAX_VALUE)
+                        .addComponent(jPanel_Graph, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_GMF, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE))
+                        .addComponent(jPanel_GMF, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jPanel_gauge1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel_gauge1, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_gauge2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel_gauge2, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_gauge3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel_gauge3, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_gauge4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPanel_gauge4, javax.swing.GroupLayout.DEFAULT_SIZE, 224, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
-                        .addComponent(jPanel_gauge5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jPanel_gauge5, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
